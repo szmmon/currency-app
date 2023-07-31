@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"
+  </head>
+  <body>
+    <div class="container">
+      <h2>Currency converter</h2>
+      <form>
+        <div class="amount">
+          <p>Amount</p>
+          <input type="text" value="1" />
+        </div>
+        <div class="convert-box">
+          <div class="from">
+            <p>From</p>
+            <img src="https://www.countryflagicons.com/FLAT/64/DE.png" />
+            <select></select>
+          </div>
+          <div class="reverse">
+            <i class="fa fa-exchange" aria-hidden="true"></i>
+          </div>
+
+          <div class="to">
+            <p>To</p>
+            <img src="https://www.countryflagicons.com/FLAT/64/US.png" />
+            <select></select>
+          </div>
+        </div>
+        <div class="result">Getting exchange result...</div>
+        <button>Get exchange rate</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="countries-list.js"></script>
+  </body>
+</html>

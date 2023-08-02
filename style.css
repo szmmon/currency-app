@@ -77,4 +77,85 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.container form .amount p {
+  padding-bottom: 3px;
+}
+
+.container form .from,
+.container form .to {
+  width: 100%;
+}
+.container form .from p,
+.container form .to p {
+  padding-bottom: 3px;
+}
+
+.container .convert-box .select-input {
+  display: flex;
+  border: 1px solid #999;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.container .convert-box .select-input:hover {
+  border: 1px solid #fe0000;
+}
+.container .convert-box .select-input img {
+  max-width: 20px;
+}
+
+.container .convert-box .select-input select {
+  width: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1rem;
+  margin: 0 -5px 0 5px;
+  color: #fff;
+}
+.container .convert-box .select-input select option {
+  color: #000;
+}
+
+.container .convert-box .reverse {
+  margin: 32px 32px 20px 32px;
+  font-size: 22px;
+  transform: rotate(90deg);
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.container .convert-box .reverse:hover {
+  color: #fe0000;
+}
+
+.container form .result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  margin: 20px 0 30px;
+}
+.container form .result button {
+  width: 100%;
+  height: 42px;
+  background: #999;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.container form .result button:hover {
+  background: #fe0000;
 }

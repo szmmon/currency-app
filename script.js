@@ -186,3 +186,22 @@ const exRateTxt = document.querySelector("form .result");
     imgTag.src = `https://www.countryflagicons.com/FLAT/64/${Country_List[code]}.png`;
   });
 });
+
+//Get exchange rate from api
+
+async function getExchangeRate() {
+  const amountVal = amount.value || 1;
+  exRateTxt.innerText = "Getting exchange rate...";
+
+  try {
+    const resposnse = await fetch(
+      ` https://v6.exchangerate-api.com/v6/867463f93bbb3cde929a71d1/latest/${fromCur.value}`
+    );
+    const result = await resposnse.json();
+    const exchangeRate = result.conversion_rates[toCur.value];
+    const totalExRate = (amount * exchangeRate).toFixed(2);
+    exRateTxt.innerText = `${amountVal} ${fromCur.value} = ${totalExRate} ${toCur.value}`;
+  } catch (error) {
+    exRateTxt.innerText = "Something went wrong";
+  }
+}

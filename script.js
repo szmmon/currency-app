@@ -199,9 +199,26 @@ async function getExchangeRate() {
     );
     const result = await resposnse.json();
     const exchangeRate = result.conversion_rates[toCur.value];
-    const totalExRate = (amount * exchangeRate).toFixed(2);
+    const totalExRate = (amountVal * exchangeRate).toFixed(2);
     exRateTxt.innerText = `${amountVal} ${fromCur.value} = ${totalExRate} ${toCur.value}`;
   } catch (error) {
     exRateTxt.innerText = "Something went wrong";
   }
 }
+
+//event listeners forbutton and exchange icon
+
+//window.addEventListener("load", getExchangeRate);
+getbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  getExchangeRate();
+});
+exicon.addEventListener("click", () => {
+  [fromCur.value, toCur.value] = [toCur.value, fromCur.value];
+  [fromCur, toCur].forEach((select) => {
+    const code = select.value;
+    const imgTag = select.parentElement.querySelector("img");
+    imgTag.src = `https://www.countryflagicons.com/FLAT/64/${Country_List[code]}.png`;
+  });
+  getExchangeRate();
+});
